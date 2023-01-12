@@ -1,0 +1,14 @@
+.common-form-header-container{
+    background-color: red;
+}
+
+.form-header{
+    display: flex;
+    
+}
+.steps{
+    border: 1px solid grey;
+}
+.steps.selected{
+    background-color: aqua;
+}
