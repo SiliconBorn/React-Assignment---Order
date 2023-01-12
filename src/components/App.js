@@ -4,10 +4,11 @@ import FormOne from './FormOne'
 import FormTwo from './FormTwo'
 import FormThree from './FormThree'
 import FormFour from './FormFour'
+const dishesData = require('../data/dishes.json');
 export const OrderFormContext = React.createContext()
 const initialState = {
   currentFormStep:1,
-  mealType:'',
+  mealType:'breakfast',
   noOfPeople:null,
   selectedRestaurant:'',
   selectedDishes:[]
@@ -29,11 +30,18 @@ const reducer = (state,action)=>{
           currentFormStep:state.currentFormStep - 1 
         }
     case "UPDATE_MEAL_TYPE":
-      break;
+      return {
+          ...state,
+          mealType:action.payload
+      }
+     
       case "UPDATE_NO_OF_PEOPLE":
         break;
         case "UPDATE_SELECTED_RESTAURANT":
-          break;
+         return{
+          ...state,
+          selectedRestaurant:action.payload
+         }
           case "UPDATE_SELECTED_DISHES":
             break;
             default:
@@ -44,7 +52,7 @@ const reducer = (state,action)=>{
 const App = () => {
   const [state,dispatch] = useReducer(reducer,initialState)
   return (
-    <OrderFormContext.Provider value={{orderState:state,orderDispatch:dispatch}}>
+    <OrderFormContext.Provider value={{orderState:state,orderDispatch:dispatch ,dishesData}}>
 
       <div>
         {
