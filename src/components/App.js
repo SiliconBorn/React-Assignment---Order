@@ -17,6 +17,17 @@ const reducer = (state,action)=>{
 
   switch(action.type){
 
+    case "INCREMENT_STEP":
+      return {
+        ...state,
+        currentFormStep:state.currentFormStep + 1
+      }
+
+      case "DECREMENT_STEP":
+        return {
+          ...state,
+          currentFormStep:state.currentFormStep - 1 
+        }
     case "UPDATE_MEAL_TYPE":
       break;
       case "UPDATE_NO_OF_PEOPLE":

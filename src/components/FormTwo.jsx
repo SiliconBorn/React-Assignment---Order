@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import { OrderFormContext } from './App'
 import Header from './Header'
+import NextBtn from './NextBtn'
+import PrevBtn from './PrevBtn'
 
 const FormTwo = () => {
   const {orderState,orderDispatch} = useContext(OrderFormContext)
@@ -15,6 +17,10 @@ const FormTwo = () => {
       <div className='steps-form'>
         <div className=''></div>
       </div>
+     </div>
+     <div className='steps-btn-container'>
+      <PrevBtn dispatch={orderDispatch}/>
+      <NextBtn dispatch={orderDispatch}/>
      </div>
     </section>
   )

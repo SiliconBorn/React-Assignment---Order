@@ -12,3 +12,7 @@
 .steps.selected{
     background-color: aqua;
 }
+.meal-selection-container,.people-selection-container{
+    display: flex;
+    flex-direction: column;
+}
