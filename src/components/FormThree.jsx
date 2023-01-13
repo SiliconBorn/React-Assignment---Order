@@ -20,8 +20,19 @@ const FormThree = () => {
   console.log(orderState)
 
   const addDishBtnHandler = ()=>{
-     setSelectedDishes([...selectedDishes,{dish:allAvailableDishes[0],servings:1}])
-  }
+    let dishNotAddedYet;
+    if(selectedDishes.length===0){
+      dishNotAddedYet=allAvailableDishes[0]
+    }else if(selectedDishes.length<allAvailableDishes.length){
+      
+        dishNotAddedYet = allAvailableDishes.filter((available)=>!selectedDishes.find(selected=>selected.dish.name===available.name))[0]
+    }else{
+        alert("no more dishes available to add")
+        return
+      }
+      setSelectedDishes([...selectedDishes,{dish:dishNotAddedYet,servings:1}])
+    }
+  
 
   const selectHandler =(e,index,dishToupdateId,dishToupdateName)=>{
     console.log(e.target.value)
