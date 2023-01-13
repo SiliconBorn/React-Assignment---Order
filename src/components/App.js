@@ -4,6 +4,7 @@ import FormOne from './FormOne'
 import FormTwo from './FormTwo'
 import FormThree from './FormThree'
 import FormFour from './FormFour'
+import Header from './Header'
 const dishesData = require('../data/dishes.json');
 export const OrderFormContext = React.createContext()
 const initialState = {
@@ -53,7 +54,9 @@ const App = () => {
   const [state,dispatch] = useReducer(reducer,initialState)
   return (
     <OrderFormContext.Provider value={{orderState:state,orderDispatch:dispatch ,dishesData}}>
-
+      <div className='steps-header-container'>
+     <Header />
+      </div>
       <div>
         {
           state.currentFormStep!==1 ?

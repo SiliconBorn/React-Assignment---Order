@@ -84,9 +84,6 @@ useEffect(()=>{
 
   return (
     <section className='order-first-step'>
-      <div className='steps-header-container'>
-     <Header currentStep={orderState.currentFormStep}/>
-      </div>
       <div className='steps-form-container'>
       <div className='steps-form'>
         <div className='selected-dishes-container'>
