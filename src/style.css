@@ -50,13 +50,10 @@ body{
     padding:10px;
 }
 
-.cards-container{
-    height: max-content;
-width:80%;
+.card-container{
+
 }
-.cards{
-    display:flex;
-}
+
 .card{
 box-shadow: 0 3px 10px 0 #aaa;
 }

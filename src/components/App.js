@@ -41,10 +41,14 @@ const reducer = (state,action)=>{
         case "UPDATE_SELECTED_RESTAURANT":
          return{
           ...state,
-          selectedRestaurant:action.payload
+          selectedRestaurant:action.payload,
+          selectedDishes:[]
          }
           case "UPDATE_SELECTED_DISHES":
-            break;
+            return {
+              ...state,
+              selectedDishes:[...action.payload]
+            }
             default:
               return state
   }

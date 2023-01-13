@@ -16,8 +16,18 @@ const FormThree = () => {
      },[])
      return dishesAvailable
   })
-  const [selectedDishes,setSelectedDishes]=useState([])
+  const [selectedDishes,setSelectedDishes]=useState(orderState.selectedDishes.length>0?orderState.selectedDishes:[])
   console.log(orderState)
+
+  useEffect(()=>{
+
+    if(selectedDishes.length>0){
+      orderDispatch({
+        type:"UPDATE_SELECTED_DISHES",
+        payload:selectedDishes
+      })
+    }
+  },[selectedDishes])
 
   const addDishBtnHandler = ()=>{
     let dishNotAddedYet;
