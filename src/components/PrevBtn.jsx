@@ -8,7 +8,7 @@ const PrevBtn = ({dispatch}) => {
   }
     return (
         <div className='btn-container'>
-          <button className='prev-button' onClick={btnClickHandler}>Previous</button>
+          <button className='prev-button btn' onClick={btnClickHandler}>Previous</button>
         </div>
       )
 }

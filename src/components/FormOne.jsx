@@ -23,16 +23,16 @@ const FormOne = () => {
       <div className='steps-form'>
         <div className='meal-selection-container'>
           <label htmlFor='mealSelect'>  Please select a meal</label>
-          <Form.Select onChange={()=>changeHandler("UPDATE_MEAL_TYPE",e.target.value)} name='mealSelect' defaultValue={orderState.mealType}>
+          <select onChange={()=>changeHandler("UPDATE_MEAL_TYPE",e.target.value)} name='mealSelect' defaultValue={orderState.mealType}>
             <option value="breakfast">Breakfast</option>
             <option value="lunch">Lunch</option>
             <option value="dinner">Dinner</option>
-          </Form.Select>
+          </select>
         </div>
         <div className='people-selection-container'>
          
             <label htmlFor='totalPeople'> Please  enter number of people</label>
-            <input type='number' min={1} max={10} name='totalPeople' onChange={()=>changeHandler("UPDATE_NO_OF_PEOPLE",e.target.value)} value={orderState.noOfPeople}/>
+            <input type='number' min={1} max={10} name='totalPeople' onChange={()=>changeHandler("UPDATE_NO_OF_PEOPLE",e.target.value)} defaultValue={orderState.noOfPeople}/>
       
         </div>
       </div>

@@ -15,47 +15,45 @@ const initialState = {
   selectedDishes:[]
 }
 
-const reducer = (state,action)=>{
-
-  switch(action.type){
-
+const reducer = (state, action) => {
+  switch (action.type) {
     case "INCREMENT_STEP":
       return {
         ...state,
-        currentFormStep:state.currentFormStep + 1
-      }
+        currentFormStep: state.currentFormStep + 1,
+      };
 
-      case "DECREMENT_STEP":
-        return {
-          ...state,
-          currentFormStep:state.currentFormStep - 1 
-        }
+    case "DECREMENT_STEP":
+      return {
+        ...state,
+        currentFormStep: state.currentFormStep - 1,
+      };
     case "UPDATE_MEAL_TYPE":
       return {
-          ...state,
-          mealType:action.payload
-      }
-     
-      case "UPDATE_NO_OF_PEOPLE":
-        return{
-          ...state,
-          noOfPeople:action.payload
-        }
-        case "UPDATE_SELECTED_RESTAURANT":
-         return{
-          ...state,
-          selectedRestaurant:action.payload,
-          selectedDishes:[]
-         }
-          case "UPDATE_SELECTED_DISHES":
-            return {
-              ...state,
-              selectedDishes:[...action.payload]
-            }
-            default:
-              return state
+        ...state,
+        mealType: action.payload,
+      };
+
+    case "UPDATE_NO_OF_PEOPLE":
+      return {
+        ...state,
+        noOfPeople: action.payload,
+      };
+    case "UPDATE_SELECTED_RESTAURANT":
+      return {
+        ...state,
+        selectedRestaurant: action.payload,
+        selectedDishes: [],
+      };
+    case "UPDATE_SELECTED_DISHES":
+      return {
+        ...state,
+        selectedDishes: [...action.payload],
+      };
+    default:
+      return state;
   }
-}
+};
 
 const App = () => {
   const [state,dispatch] = useReducer(reducer,initialState)

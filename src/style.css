@@ -1,29 +1,77 @@
-body{
- 
+html {
+    height: 100%;
 }
+* {
+	padding: 0;
+	margin: 0;
+	border: 0;
+	}
+body{
+    /* background-image: radial-gradient(circle, #767dec, #dd6cd0, #ff699b, #ff8863, #ffb538, #ffb82c, #ffbb1d, #ffbe00, #ff8f34, #ff556d, #ff21af, #f043f3); */
+    background-image: linear-gradient(to right top, #cb210a, #db5a00, #e58600, #eab000, #ead82b);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+select {
+    /* margin: 50px; */
+    width: 180px;
+    padding: 5px 35px 5px 5px;
+    font-size: 15px;
+    height: 36px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius:5px;
+    background: url(https://img.icons8.com/external-flat-land-kalash/64/null/external-food-food-flat-land-kalash-18.png) 96% / 15% no-repeat #f3eded;
+    cursor: pointer;
+  }
+  select:hover,select:focus{
+    border: none;
+    outline: none;
+  }
+
+  input[type="number"]{
+    background:transparent;
+    border: 1px solid grey; 
+  }
+  
 .order-form-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 520px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height:300px;
+    width:300px;
 }
 .order-form{
- height:62%;
- width:62%;
- display: flex;
- flex-direction: column;
- padding:2px;
+ height:100%;
+ width:100%
+
 }
 .steps-header-container{
     position: sticky;
 
 }
 .main-form{
-   height: 100%;
-   width:100%;
+    display: block;
+    height:100%;
+ width:100%;
+    margin-inline: auto;
+    border-radius: 4px;
+    box-shadow: none;
+    background: #fff;
+    transform-origin: center center;
+    transition: all 0.4s ease-in-out;
+    text-decoration: none;
+    color: black;
+    /* background-image: linear-gradient(to right top, #13095c, #2f468b, #5f81b2, #a1bcd5, #f1f6f9); */
     box-shadow: -19px 0px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
 }
 
+.order-first-step,.order-second-step,.order-third-step,.order-fourth-step{
+    height:100%;
+    width:100%;
+}
 .common-form-header-container{
     background-color: red;
 }
@@ -55,5 +103,29 @@ body{
 }
 
 .card{
+    
 box-shadow: 0 3px 10px 0 #aaa;
+}
+
+.btn{
+    display: inline-block;
+  padding: 0.5em 1.7em;
+  margin: 0 0.1em 0.1em 0;
+  border: 0.16em solid rgba(255, 255, 255, 0);
+  background-color: rgb(141, 67, 238);
+  border-radius: 2em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #fff;
+  text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+  text-align: center;
+  transition: all 0.2s
+}
+
+.btn:hover,.btn:focus{
+    border-color: rgb(243, 240, 240);
+  background-color: rgb(71, 4, 160);
+
 }

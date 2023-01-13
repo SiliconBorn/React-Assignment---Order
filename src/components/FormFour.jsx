@@ -57,7 +57,7 @@ const FormFour = () => {
      <div className='steps-btn-container'>
       <PrevBtn dispatch={orderDispatch}/>
       <div className='btn-container'>
-        <button className='submit-btn' onClick={submitClickHandler}>Submit</button>
+        <button className='submit-btn btn' onClick={submitClickHandler}>Submit</button>
       </div>
      </div>
     </section>

@@ -9,7 +9,7 @@ const NextBtn = ({dispatch}) => {
 
   return (
     <div className='btn-container'>
-      <button className='next-button' onClick={btnClickHandler}>Next</button>
+      <button className='next-button btn' onClick={btnClickHandler}>Next</button>
     </div>
   )
 }
