@@ -25,20 +25,22 @@ const FormThree = () => {
 
   const selectHandler =(e,index,dishToupdateId,dishToupdateName)=>{
     console.log(e.target.value)
-    const dishToAdd = JSON.parse(e.target.value)
+    const dishToAddName = e.target.value
     let dishAlreadySelected = false
     if( selectedDishes.length>0){
-      dishAlreadySelected =  selectedDishes.find((dishObj)=>dishObj.dish.id===dishToAdd.id)
+      dishAlreadySelected =  selectedDishes.some((dishObj)=>dishObj.dish.name===dishToAddName)
     }
      if(dishAlreadySelected){
 
         alert('dish already selected. Please increase the servings ,if same dish is needed')
-          e.target.value = selectedDishes[index].dish.name
+          // e.target.value = selectedDishes[index].dish.name
         setSelectedDishes([...selectedDishes]) 
+        return false
 
      } else {
       const updatedSelectedDishes = selectedDishes.map((selectedDish)=>{
         if(selectedDish.dish.id===dishToupdateId && selectedDish.dish.name ===dishToupdateName){
+          let dishToAdd = allAvailableDishes.find(dish=>dish.name===dishToAddName)
          let updatedCurrentDish = {...selectedDish,dish:dishToAdd}
          return updatedCurrentDish
         }
@@ -83,17 +85,17 @@ useEffect(()=>{
                 <>
                 <div className='dish-selection-container'>
           <label htmlFor='dishSelect'>  Please select a dish</label>
-          <Form.Select onChange={(e)=>selectHandler(e,index,selectedDish.dish.id,selectedDish.dish.name)} name='dishSelect'  value={selectedDish.dish.name}>
+          <select onChange={(e)=>selectHandler(e,index,selectedDish.dish.id,selectedDish.dish.name)} name='dishSelect' value={selectedDish.dish.name}>
             {
               allAvailableDishes.map((dish,index)=>{
                 return(
                   <>
-                  <option value={JSON.stringify(dish)} key={`${index}-${dish.name}-${dish.id}`} selected={selectedDish.dish.name===dish.name && selectedDish.dish.id === dish.id}>{dish.name}</option>
+                  <option value={dish.name} key={`${index}-${dish.name}-${dish.id}`}>{dish.name}</option>
                   </>
                 )
               })
             }
-          </Form.Select>
+          </select>
         </div>
         <div className='serving-selection-container'>
          
