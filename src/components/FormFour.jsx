@@ -12,7 +12,7 @@ const FormFour = () => {
   }
   return (
     <section className='order-fourth-step'>
-    <div className='body-cards-portion  flex justify-center ' style={{fontFamily:` ${'Zen Dots'}` }}>
+    <div className='body-cards-portion  flex justify-center'>
         <div className='card-container'>
             {/* currentFormStep:4,
   mealType:'breakfast',
@@ -54,7 +54,7 @@ const FormFour = () => {
                         </div>
         </div>
     </div>
-     <div className='steps-btn-container'>
+     <div className='double steps-btn-container'>
       <PrevBtn dispatch={orderDispatch}/>
       <div className='btn-container'>
         <button className='submit-btn btn' onClick={submitClickHandler}>Submit</button>

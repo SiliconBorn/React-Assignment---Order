@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Text:wght@700&family=Libre+Baskerville:wght@700&family=Roboto+Mono:wght@600&family=Zen+Dots&display=swap');
+
+
 html {
     height: 100%;
 }
@@ -6,14 +9,19 @@ html {
 	margin: 0;
 	border: 0;
 	}
+
 body{
+       /* font-family: 'Bebas Neue', cursive; */
+    /* font-family: 'Crimson Text', serif; */
+    /* font-family: 'Libre Baskerville', serif; */
+    font-family: 'Roboto Mono', monospace;
     /* background-image: radial-gradient(circle, #767dec, #dd6cd0, #ff699b, #ff8863, #ffb538, #ffb82c, #ffbb1d, #ffbe00, #ff8f34, #ff556d, #ff21af, #f043f3); */
     background-image: linear-gradient(to right top, #cb210a, #db5a00, #e58600, #eab000, #ead82b);
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 select {
-    /* margin: 50px; */
+    margin: 3px;
     width: 180px;
     padding: 5px 35px 5px 5px;
     font-size: 15px;
@@ -31,8 +39,17 @@ select {
   }
 
   input[type="number"]{
-    background:transparent;
-    border: 1px solid grey; 
+    background: transparent;
+    border: 1px solid grey;
+    margin: 2px;
+    height: 21px;
+    border-radius: 5px;
+    padding-left: 12px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  label{
+    margin-bottom:2px;
   }
   
 .order-form-container{
@@ -81,6 +98,7 @@ select {
     display: flex;
     
 }
+
 .steps{
     border: 1px solid grey;
 }
@@ -90,6 +108,8 @@ select {
 .meal-selection-container,.people-selection-container{
     display: flex;
     flex-direction: column;
+    margin-top:5px;
+    padding:20px;
 }
 
 .body-cards-portion{
@@ -106,13 +126,26 @@ select {
     
 box-shadow: 0 3px 10px 0 #aaa;
 }
-
+.steps-form-container{
+    overflow-y: auto;
+    height:250px;
+}
+.btn-container{
+    text-align:right;
+}
+.steps-btn-container{
+    margin:0 10px;
+}
+.double.steps-btn-container{
+  display: flex;
+  justify-content: space-between;
+}
 .btn{
     display: inline-block;
   padding: 0.5em 1.7em;
   margin: 0 0.1em 0.1em 0;
   border: 0.16em solid rgba(255, 255, 255, 0);
-  background-color: rgb(141, 67, 238);
+  background-color: rgb(108 36 203);
   border-radius: 2em;
   box-sizing: border-box;
   text-decoration: none;
@@ -123,9 +156,16 @@ box-shadow: 0 3px 10px 0 #aaa;
   text-align: center;
   transition: all 0.2s
 }
+.btn.submit-btn{
+    background-color: rgb(45 201 46);
+}
+.btn.submit-btn:hover,.btn.submit-btn:focus{
+    background-color: rgb(7, 126, 7);
 
+}
 .btn:hover,.btn:focus{
-    border-color: rgb(243, 240, 240);
+    /* border-color: rgb(243, 240, 240); */
+  scale: 1.1;
   background-color: rgb(71, 4, 160);
 
 }

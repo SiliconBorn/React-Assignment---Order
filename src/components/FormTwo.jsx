@@ -55,7 +55,7 @@ const FormTwo = () => {
         </div>
       </div>
      </div>
-     <div className='steps-btn-container'>
+     <div className=' double steps-btn-container'>
       <PrevBtn dispatch={orderDispatch}/>
       <NextBtn dispatch={orderDispatch}/>
      </div>

@@ -131,7 +131,7 @@ useEffect(()=>{
         <button className='add-dish-btn' onClick={addDishBtnHandler}>Add dish</button>
       </div>
      </div>
-     <div className='steps-btn-container'>
+     <div className='double steps-btn-container'>
       <PrevBtn dispatch={orderDispatch}/>
       <NextBtn dispatch={orderDispatch}/>
      </div>
