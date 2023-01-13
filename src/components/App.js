@@ -10,7 +10,7 @@ export const OrderFormContext = React.createContext()
 const initialState = {
   currentFormStep:1,
   mealType:'breakfast',
-  noOfPeople:null,
+  noOfPeople:1,
   selectedRestaurant:'',
   selectedDishes:[]
 }
@@ -37,7 +37,10 @@ const reducer = (state,action)=>{
       }
      
       case "UPDATE_NO_OF_PEOPLE":
-        break;
+        return{
+          ...state,
+          noOfPeople:action.payload
+        }
         case "UPDATE_SELECTED_RESTAURANT":
          return{
           ...state,
