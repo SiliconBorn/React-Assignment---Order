@@ -105,7 +105,7 @@ select {
 .steps.selected{
     background-color: aqua;
 }
-.meal-selection-container,.people-selection-container{
+.meal-selection-container,.people-selection-container,.selected-dishes-container{
     display: flex;
     flex-direction: column;
     margin-top:5px;
@@ -134,7 +134,7 @@ box-shadow: 0 3px 10px 0 #aaa;
     text-align:right;
 }
 .steps-btn-container{
-    margin:0 10px;
+    margin:3px 10px;
 }
 .double.steps-btn-container{
   display: flex;
@@ -168,4 +168,9 @@ box-shadow: 0 3px 10px 0 #aaa;
   scale: 1.1;
   background-color: rgb(71, 4, 160);
 
+}
+.selected-dish-container{
+    margin-bottom: 5px;
+    border: 1px dotted grey;
+    padding: 3px 14px;
 }

@@ -100,7 +100,7 @@ useEffect(()=>{
           {
             selectedDishes.length>0 && selectedDishes.map((selectedDish,index)=>{
               return(
-                <>
+                <div className='selected-dish-container'>
                 <div className='dish-selection-container'>
           <label htmlFor='dishSelect'>  Please select a dish</label>
           <select onChange={(e)=>selectHandler(e,index,selectedDish.dish.id,selectedDish.dish.name)} name='dishSelect' value={selectedDish.dish.name}>
@@ -121,7 +121,7 @@ useEffect(()=>{
             <input type='number' min={1} max={10} name='totalServings' defaultValue={selectedDish.servings} onChange={(e)=>servingsChangeHandler(e,selectedDish.dish.id,selectedDish.dish.name)}/>
       
         </div>
-                </>
+                </div>
               )
             })
           }
