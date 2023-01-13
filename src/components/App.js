@@ -54,10 +54,12 @@ const App = () => {
   const [state,dispatch] = useReducer(reducer,initialState)
   return (
     <OrderFormContext.Provider value={{orderState:state,orderDispatch:dispatch ,dishesData}}>
+      <section className='order-form-container'>
+      <div className='order-form'>
       <div className='steps-header-container'>
      <Header />
       </div>
-      <div>
+      <div className='main-form'>
         {
           state.currentFormStep!==1 ?
            state.currentFormStep!==2?
@@ -68,6 +70,8 @@ const App = () => {
            <FormOne/>
         }
       </div>
+      </div>
+      </section>
     </OrderFormContext.Provider>
   )
 }

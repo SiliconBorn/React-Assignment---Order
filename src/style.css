@@ -1,6 +1,33 @@
+body{
+ 
+}
+.order-form-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 520px;
+}
+.order-form{
+ height:62%;
+ width:62%;
+ display: flex;
+ flex-direction: column;
+ padding:2px;
+}
+.steps-header-container{
+    position: sticky;
+
+}
+.main-form{
+   height: 100%;
+   width:100%;
+    box-shadow: -19px 0px 15px -3px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
+}
+
 .common-form-header-container{
     background-color: red;
 }
+
 
 .form-header{
     display: flex;
@@ -15,4 +42,21 @@
 .meal-selection-container,.people-selection-container{
     display: flex;
     flex-direction: column;
+}
+
+.body-cards-portion{
+    position: relative;
+    height:max-content;
+    padding:10px;
+}
+
+.cards-container{
+    height: max-content;
+width:80%;
+}
+.cards{
+    display:flex;
+}
+.card{
+box-shadow: 0 3px 10px 0 #aaa;
 }

@@ -36,7 +36,7 @@ const FormTwo = () => {
   }
 
   return (
-    <section className='order-first-step'>
+    <section className='order-second-step'>
       <div className='steps-form-container'>
       <div className='steps-form'>
         <div className='meal-selection-container'>

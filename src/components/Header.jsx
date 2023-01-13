@@ -11,7 +11,7 @@ const Header = (props) => {
              <div className={`steps step-one ${orderState.currentFormStep===1?'selected':''}`}>Step one</div> 
              <div className={`steps step-two ${orderState.currentFormStep===2?'selected':''}`}>Step Two</div> 
              <div className={`steps step-three ${orderState.currentFormStep===3?'selected':''}`}>Step Three</div> 
-             <div className={`steps step-four ${orderState.currentFormStep===4?'selected':''}`}> Step Four</div> 
+             <div className={`steps step-four ${orderState.currentFormStep===4?'selected':''}`}>Review</div> 
             </div>
          </div>
     </div>

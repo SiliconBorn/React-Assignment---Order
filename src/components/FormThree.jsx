@@ -83,7 +83,7 @@ useEffect(()=>{
 },[selectedDishes])
 
   return (
-    <section className='order-first-step'>
+    <section className='order-third-step'>
       <div className='steps-form-container'>
       <div className='steps-form'>
         <div className='selected-dishes-container'>
