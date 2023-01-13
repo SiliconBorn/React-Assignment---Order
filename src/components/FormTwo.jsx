@@ -10,7 +10,7 @@ const FormTwo = () => {
   const {orderState,orderDispatch,dishesData} = useContext(OrderFormContext)
   const [allAvailableRestaurants] = useState(()=>{
      const restaurantsAvailable = dishesData.dishes.reduce((restaurantsAvailable,current)=>{
-      if(current.availableMeals.includes(orderState.mealType)){
+      if(current.availableMeals.includes(orderState.mealType) && !(restaurantsAvailable.includes(current.restaurant)) ){
          restaurantsAvailable = [...restaurantsAvailable,current.restaurant]
       }
       return restaurantsAvailable
