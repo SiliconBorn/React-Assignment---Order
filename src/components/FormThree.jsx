@@ -4,6 +4,7 @@ import { OrderFormContext } from './App'
 import Header from './Header'
 import NextBtn from './NextBtn'
 import PrevBtn from './PrevBtn'
+import PlusIcon from './PlusIcon'
 
 const FormThree = () => {
   const {orderState,orderDispatch,dishesData} = useContext(OrderFormContext)
@@ -95,7 +96,7 @@ useEffect(()=>{
   return (
     <section className='order-third-step'>
       <div className='steps-form-container'>
-      <div className='steps-form'>
+      <div className='steps-form' style={{fontSize:"13px"}}>
         <div className='selected-dishes-container'>
           {
             selectedDishes.length>0 && selectedDishes.map((selectedDish,index)=>{
@@ -128,7 +129,7 @@ useEffect(()=>{
         </div>
       </div>
       <div className='add-dishes-btn-container'>
-        <button className='add-dish-btn' onClick={addDishBtnHandler}>Add dish</button>
+        <button className='add-dish-btn' onClick={addDishBtnHandler}>Add dish  <PlusIcon/></button>
       </div>
      </div>
      <div className='double steps-btn-container'>
