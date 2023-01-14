@@ -37,7 +37,7 @@ const FormTwo = () => {
 
   return (
     <section className='order-second-step'>
-      <div className='steps-form-container'>
+      <div className='steps-form- center'>
       <div className='steps-form'>
         <div className='meal-selection-container'>
           <label htmlFor='mealSelect'>  Please select a meal</label>

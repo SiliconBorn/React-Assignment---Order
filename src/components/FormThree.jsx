@@ -103,7 +103,7 @@ useEffect(()=>{
               return(
                 <div className='selected-dish-container'>
                 <div className='dish-selection-container'>
-          <label htmlFor='dishSelect'>  Please select a dish</label>
+          <label htmlFor='dishSelect'> Select Your Choice</label>
           <select onChange={(e)=>selectHandler(e,index,selectedDish.dish.id,selectedDish.dish.name)} name='dishSelect' value={selectedDish.dish.name}>
             {
               allAvailableDishes.map((dish,index)=>{
@@ -118,8 +118,8 @@ useEffect(()=>{
         </div>
         <div className='serving-selection-container'>
          
-            <label htmlFor='totalServings'> Please  enter number of servings</label>
-            <input type='number' min={1} max={10} name='totalServings' defaultValue={selectedDish.servings} onChange={(e)=>servingsChangeHandler(e,selectedDish.dish.id,selectedDish.dish.name)}/>
+            <label htmlFor='totalServings'> Servings</label>
+            <input type='number' className='serving' min={1} max={10} name='totalServings' defaultValue={selectedDish.servings} onChange={(e)=>servingsChangeHandler(e,selectedDish.dish.id,selectedDish.dish.name)}/>
       
         </div>
                 </div>
@@ -129,7 +129,7 @@ useEffect(()=>{
         </div>
       </div>
       <div className='add-dishes-btn-container'>
-        <button className='add-dish-btn' onClick={addDishBtnHandler}>Add dish  <PlusIcon/></button>
+        <button className='add-dish-btn' onClick={addDishBtnHandler}><PlusIcon/>Add dish</button>
       </div>
      </div>
      <div className='double steps-btn-container'>

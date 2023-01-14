@@ -19,7 +19,7 @@ const FormOne = () => {
 
   return (
     <section className='order-first-step'>
-     <div className='steps-form-container'>
+     <div className='steps-form-container center'>
       <div className='steps-form'>
         <div className='meal-selection-container'>
           <label htmlFor='mealSelect'>  Please select a meal</label>
