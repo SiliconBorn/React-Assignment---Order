@@ -18,6 +18,13 @@ const FormFour = () => {
   };
   return (
     <section className="order-fourth-step">
+      <div className="final-order-header-portion">
+        <div className='final-order-header-container'>
+          <p className="'final-order-header">
+            FINAL ORDER SUMMARY
+          </p>
+        </div>
+      </div>
       <div className="body-cards-portion ">
         <div className="final-order-card-container">
           <div className="final-order-card">

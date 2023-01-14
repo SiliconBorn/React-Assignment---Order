@@ -3,6 +3,7 @@ import { OrderFormContext } from "./App";
 import NextBtn from "./NextBtn";
 import PrevBtn from "./PrevBtn";
 import PlusIcon from "./PlusIcon";
+import RemoveBtn from "./removeBtn";
 
 const FormThree = () => {
   /*REQ. STATES*/
@@ -29,12 +30,12 @@ const FormThree = () => {
 
   /*REQ. SIDE-EFFECTS*/
   useEffect(() => {
-    if (selectedDishes.length > 0) {
+  
       orderDispatch({
         type: "UPDATE_SELECTED_DISHES",
         payload: selectedDishes,
       });
-    }
+ 
   }, [selectedDishes]);
 
   /*REQ. FUNCTIONS*/
@@ -113,6 +114,12 @@ const FormThree = () => {
     setSelectedDishes([...updatedSelectedDishes]);
   };
 
+  //FUNCTION TO REMOVE SELECTED DISH
+  const removeDish =(dishIndex)=>{
+    const updatedSelectedDishes = selectedDishes.filter((dish,i)=>i!==dishIndex)
+    setSelectedDishes([...updatedSelectedDishes]) 
+  }
+
   //FUNCTION TO VALIDATE INPUT FROM SELECT ELEMENTS BEFORE PROCEEDING TO NEXT STEP
   const valueCheckBeforeStepChange = () => {
     if (
@@ -137,6 +144,13 @@ const FormThree = () => {
     <section className="order-third-step">
       <div className="steps-form-container">
         <div className="steps-form" style={{ fontSize: "13px" }}>
+        <div className="dishes-select-header-portion center">
+        <div className='dishes-select-header-container'>
+          <p className="'dishes-select-header">
+            { orderState.selectedDishes.length===0?"ADD HEAVENLY DISHES":"ADDED DELICIOUSNESS"}
+          </p>
+        </div>
+      </div>
           <div className="selected-dishes-container">
             {selectedDishes.length > 0 &&
               selectedDishes.map((selectedDish, index) => {
@@ -189,6 +203,9 @@ const FormThree = () => {
                           e.preventDefault(), e.currentTarget.blur()
                         )}
                       />
+                    </div>
+                    <div className="remove-dish-btn-container" onClick={()=>removeDish(index)}>
+                      <RemoveBtn/>
                     </div>
                   </div>
                 );

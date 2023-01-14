@@ -47,6 +47,13 @@ const FormTwo = () => {
     <section className="order-second-step">
       <div className="steps-form-container center">
         <div className="steps-form">
+        <div className="restaurant-select-header-portion center">
+        <div className='restaurant-select-header-container'>
+          <p className="'restaurant-select-header">
+            SOURCE OF HAPPINESS
+          </p>
+        </div>
+      </div>
           <div className="meal-selection-container">
             <label htmlFor="mealSelect">Select Your Desired Restaurant</label>
             <select
