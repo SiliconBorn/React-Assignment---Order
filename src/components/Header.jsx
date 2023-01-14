@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { OrderFormContext } from './App'
 
-const Header = (props) => {
+const Header = () => {
     const {orderState} = useContext(OrderFormContext)
   return (
     <div className='common-form-header-container'>
