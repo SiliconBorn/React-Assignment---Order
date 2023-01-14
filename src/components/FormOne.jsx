@@ -66,7 +66,7 @@ const FormOne = () => {
               max={orderState.MAX}
               name="totalPeople"
               onChange={(e) =>
-                changeHandler("UPDATE_NO_OF_PEOPLE", e.target.value)
+                changeHandler("UPDATE_NO_OF_PEOPLE", Number(e.target.value))
               }
               value={orderState.noOfPeople}
             />

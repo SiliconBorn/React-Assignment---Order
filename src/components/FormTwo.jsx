@@ -51,6 +51,7 @@ const FormTwo = () => {
             <label htmlFor="mealSelect">Select Your Desired Restaurant</label>
             <select
               onChange={selectHandler}
+              required={true}
               name="mealSelect"
               value={
                 orderState.selectedRestaurant
