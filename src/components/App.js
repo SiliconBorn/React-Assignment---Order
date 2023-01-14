@@ -1,22 +1,25 @@
-import React, { useReducer } from 'react'
-import '../style.css'
-import FormOne from './FormOne'
-import FormTwo from './FormTwo'
-import FormThree from './FormThree'
-import FormFour from './FormFour'
-import Header from './Header'
-const dishesData = require('../data/dishes.json');
-export const OrderFormContext = React.createContext()
-const initialState = {
-  currentFormStep:1,
-  mealType:'breakfast',
-  noOfPeople:1,
-  selectedRestaurant:'',
-  selectedDishes:[],
-  MIN:1,
-  MAX:10
-}
+import React, { useReducer } from "react";
+import "../style.css";
+import FormOne from "./FormOne";
+import FormTwo from "./FormTwo";
+import FormThree from "./FormThree";
+import FormFour from "./FormFour";
+import Header from "./Header";
+const dishesData = require("../data/dishes.json");
+export const OrderFormContext = React.createContext();
 
+/*REQ. GLOBAL STATE*/
+const initialState = {
+  currentFormStep: 1,
+  mealType: "breakfast",
+  noOfPeople: 1,
+  selectedRestaurant: "",
+  selectedDishes: [],
+  MIN: 1,
+  MAX: 10,
+};
+
+/*REQ. GLOBAL REDUCER*/
 const reducer = (state, action) => {
   switch (action.type) {
     case "INCREMENT_STEP":
@@ -58,29 +61,35 @@ const reducer = (state, action) => {
 };
 
 const App = () => {
-  const [state,dispatch] = useReducer(reducer,initialState)
+  const [state, dispatch] = useReducer(reducer, initialState);
   return (
-    <OrderFormContext.Provider value={{orderState:state,orderDispatch:dispatch ,dishesData}}>
-      <section className='order-form-container'>
-      <div className='order-form'>
-      <div className='steps-header-container'>
-     <Header />
-      </div>
-      <div className='main-form'>
-        {
-          state.currentFormStep!==1 ?
-           state.currentFormStep!==2?
-           state.currentFormStep!==3?
-           <FormFour/>:
-           <FormThree/>:
-           <FormTwo/>:
-           <FormOne/>
-        }
-      </div>
-      </div>
+    <OrderFormContext.Provider
+      value={{ orderState: state, orderDispatch: dispatch, dishesData }}
+    >
+      <section className="order-form-container">
+        <div className="order-form">
+          <div className="steps-header-container">
+            <Header />
+          </div>
+          <div className="main-form">
+            {state.currentFormStep !== 1 ? (
+              state.currentFormStep !== 2 ? (
+                state.currentFormStep !== 3 ? (
+                  <FormFour />
+                ) : (
+                  <FormThree />
+                )
+              ) : (
+                <FormTwo />
+              )
+            ) : (
+              <FormOne />
+            )}
+          </div>
+        </div>
       </section>
     </OrderFormContext.Provider>
-  )
-}
+  );
+};
 
-export default App
+export default App;
