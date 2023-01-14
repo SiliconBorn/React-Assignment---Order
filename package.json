@@ -2,7 +2,7 @@
   "homepage": "http://SiliconBorn.github.io/React-Assignment---Order",
   "name": "assignment",
   "version": "1.0.0",
-  "description": "assignment project ",
+  "description": "react assignment project ",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
