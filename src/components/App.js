@@ -8,11 +8,13 @@ import Header from './Header'
 const dishesData = require('../data/dishes.json');
 export const OrderFormContext = React.createContext()
 const initialState = {
-  currentFormStep:3,
+  currentFormStep:1,
   mealType:'breakfast',
   noOfPeople:1,
   selectedRestaurant:'',
-  selectedDishes:[]
+  selectedDishes:[],
+  MIN:1,
+  MAX:10
 }
 
 const reducer = (state, action) => {

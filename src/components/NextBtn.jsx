@@ -1,10 +1,17 @@
 import React from 'react'
 
-const NextBtn = ({dispatch}) => {
+const NextBtn = ({dispatch,access}) => {
   const btnClickHandler =()=>{
-    dispatch({
-      type:"INCREMENT_STEP",
-    })
+    if(access()){
+      dispatch({
+        type:"INCREMENT_STEP",
+      })
+    }else errorMessage()
+
+  }
+
+  const errorMessage =()=>{
+    alert('Fill the form correctly to proceed')
   }
 
   return (

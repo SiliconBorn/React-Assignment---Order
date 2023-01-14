@@ -119,7 +119,7 @@ useEffect(()=>{
         <div className='serving-selection-container'>
          
             <label htmlFor='totalServings'> Servings</label>
-            <input type='number' className='serving' min={1} max={10} name='totalServings' defaultValue={selectedDish.servings} onChange={(e)=>servingsChangeHandler(e,selectedDish.dish.id,selectedDish.dish.name)}/>
+            <input type='number' className='servings' min={orderState.MIN} max={orderState.MAX} name='totalServings' defaultValue={selectedDish.servings} onChange={(e)=>servingsChangeHandler(e,selectedDish.dish.id,selectedDish.dish.name)}/>
       
         </div>
                 </div>
