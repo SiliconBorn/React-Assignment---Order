@@ -12,7 +12,7 @@ const FormFour = () => {
     console.log({
       mealType: orderState.mealType,
       noOfPeople: orderState.noOfPeople,
-      Restaurant: orderState.selectedRestaurant,
+      restaurant: orderState.selectedRestaurant,
       dishes: orderState.selectedDishes,
     });
   };
