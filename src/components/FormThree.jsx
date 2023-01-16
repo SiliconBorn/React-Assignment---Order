@@ -64,7 +64,7 @@ const FormThree = () => {
           type: "HIDE_NOTIFICATION",
         });
         clearTimeout(timer);
-      }, 4000);
+      }, 6000);
       // alert("no more dishes available to add");
       return;
     }
@@ -89,7 +89,7 @@ const FormThree = () => {
         type: "SHOW_NOTIFICATION",
         payload: {
           notification:
-            "Dish already selected. Please increase the servings ,if same dish is needed",
+            "Dish already selected. Please increase the servings, if same dish is needed",
           notificationType: "error",
         },
       });
@@ -98,7 +98,7 @@ const FormThree = () => {
           type: "HIDE_NOTIFICATION",
         });
         clearTimeout(timer);
-      }, 4000);
+      }, 6000);
       // alert(
       //   "dish already selected. Please increase the servings ,if same dish is needed"
       // );
@@ -248,7 +248,7 @@ const FormThree = () => {
       </div>
       <div className="double steps-btn-container">
         <PrevBtn dispatch={orderDispatch} />
-        <NextBtn dispatch={orderDispatch} access={valueCheckBeforeStepChange} />
+        <NextBtn dispatch={orderDispatch} access={valueCheckBeforeStepChange} errMessage={'Mismatch between mentioned people and total servings selected'} />
       </div>
     </section>
   );

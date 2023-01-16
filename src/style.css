@@ -81,7 +81,7 @@ label {
     border: 0px solid transparent;
     border-radius: 0px 0px 38px 38px;
     padding: 0px 50px;
-    z-index: 10000;
+    z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,7 +89,7 @@ label {
 }
 
 .animate{
-    animation: notifyAnime  4000ms;
+    animation: notifyAnime  6000ms;
     animation-direction: alternate;
 }
 

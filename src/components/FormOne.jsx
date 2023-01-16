@@ -77,7 +77,7 @@ const FormOne = () => {
         </div>
       </div>
       <div className="steps-btn-container">
-        <NextBtn dispatch={orderDispatch} access={valueCheckBeforeStepChange} />
+        <NextBtn dispatch={orderDispatch} access={valueCheckBeforeStepChange} errMessage={'Enter between allowed number of limit'} />
       </div>
     </section>
   );

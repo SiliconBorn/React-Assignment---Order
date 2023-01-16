@@ -1,6 +1,7 @@
 import React from 'react'
 
-const NextBtn = ({dispatch,access}) => {
+const NextBtn = (props) => {
+  const {dispatch,access} = props
   const btnClickHandler =()=>{
     if(access()){
       dispatch({
@@ -15,7 +16,7 @@ const NextBtn = ({dispatch,access}) => {
     dispatch({
       type: "SHOW_NOTIFICATION",
       payload: {
-        notification: "Fill the form correctly to proceed",
+        notification: props.errMessage?props.errMessage:"Fill the form correctly to proceed",
         notificationType: "error",
       },
     });
@@ -24,7 +25,7 @@ const NextBtn = ({dispatch,access}) => {
         type: "HIDE_NOTIFICATION",
       });
       clearTimeout(timer);
-    }, 4000);
+    }, 6000);
   };
 
   return (

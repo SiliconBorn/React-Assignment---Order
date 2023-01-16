@@ -22,7 +22,7 @@ const FormFour = () => {
         type: "HIDE_NOTIFICATION",
       });
       clearTimeout(timer);
-    }, 4000);
+    }, 6000);
     console.log({
       mealType: orderState.mealType,
       noOfPeople: orderState.noOfPeople,
