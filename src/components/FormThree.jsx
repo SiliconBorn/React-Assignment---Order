@@ -52,7 +52,20 @@ const FormThree = () => {
           )
       )[0];
     } else {
-      alert("no more dishes available to add");
+      orderDispatch({
+        type: "SHOW_NOTIFICATION",
+        payload: {
+          notification: "No more dishes available to add",
+          notificationType: "error",
+        },
+      });
+      let timer = setTimeout(() => {
+        orderDispatch({
+          type: "HIDE_NOTIFICATION",
+        });
+        clearTimeout(timer);
+      }, 4000);
+      // alert("no more dishes available to add");
       return;
     }
     setSelectedDishes([
@@ -72,9 +85,23 @@ const FormThree = () => {
     }
 
     if (dishAlreadySelected) {
-      alert(
-        "dish already selected. Please increase the servings ,if same dish is needed"
-      );
+      orderDispatch({
+        type: "SHOW_NOTIFICATION",
+        payload: {
+          notification:
+            "Dish already selected. Please increase the servings ,if same dish is needed",
+          notificationType: "error",
+        },
+      });
+      let timer = setTimeout(() => {
+        orderDispatch({
+          type: "HIDE_NOTIFICATION",
+        });
+        clearTimeout(timer);
+      }, 4000);
+      // alert(
+      //   "dish already selected. Please increase the servings ,if same dish is needed"
+      // );
       setSelectedDishes([...selectedDishes]);
       return false;
     } else {

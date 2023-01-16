@@ -9,6 +9,20 @@ const FormFour = () => {
   /*REQ. FUNCTIONS*/
   //FUNTIONS TO HANDLE SUBMIT BTN CLICK
   const submitClickHandler = () => {
+    orderDispatch({
+      type: "SHOW_NOTIFICATION",
+      payload: {
+        notification:
+          "Your mouth-watering package is getting ready. Meanwhile, your order summary is visible in the console",
+        notificationType: "success",
+      },
+    });
+    let timer = setTimeout(() => {
+      orderDispatch({
+        type: "HIDE_NOTIFICATION",
+      });
+      clearTimeout(timer);
+    }, 4000);
     console.log({
       mealType: orderState.mealType,
       noOfPeople: orderState.noOfPeople,

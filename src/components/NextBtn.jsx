@@ -10,9 +10,22 @@ const NextBtn = ({dispatch,access}) => {
 
   }
 
-  const errorMessage =()=>{
-    alert('Fill the form correctly to proceed')
-  }
+  const errorMessage = () => {
+    // alert('Fill the form correctly to proceed')
+    dispatch({
+      type: "SHOW_NOTIFICATION",
+      payload: {
+        notification: "Fill the form correctly to proceed",
+        notificationType: "error",
+      },
+    });
+    let timer = setTimeout(() => {
+      dispatch({
+        type: "HIDE_NOTIFICATION",
+      });
+      clearTimeout(timer);
+    }, 4000);
+  };
 
   return (
     <div className='btn-container'>

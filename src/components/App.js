@@ -5,6 +5,7 @@ import FormTwo from "./FormTwo";
 import FormThree from "./FormThree";
 import FormFour from "./FormFour";
 import Header from "./Header";
+import NotificationDisplay from "./NotificationDisplay";
 const dishesData = require("../data/dishes.json");
 export const OrderFormContext = React.createContext();
 
@@ -15,6 +16,9 @@ const initialState = {
   noOfPeople: 1,
   selectedRestaurant: "",
   selectedDishes: [],
+  notification:"",
+  notificationType:"",
+  showNotification:false,
   MIN: 1,
   MAX: 10,
 };
@@ -54,7 +58,25 @@ const reducer = (state, action) => {
       return {
         ...state,
         selectedDishes: [...action.payload],
-      };
+      };   
+      
+    case "SHOW_NOTIFICATION":
+      return {
+        ...state,
+        notification:action.payload.notification,
+        notificationType:action.payload.notificationType,
+        showNotification:true,
+
+      }
+      case "HIDE_NOTIFICATION":
+        return {
+          ...state,
+          notification:"",
+          notificationType:"",
+          showNotification:false,
+  
+        }
+      
     default:
       return state;
   }
@@ -66,6 +88,7 @@ const App = () => {
     <OrderFormContext.Provider
       value={{ orderState: state, orderDispatch: dispatch, dishesData }}
     >
+     {state.showNotification && <NotificationDisplay notificationToDisplay={state.notification} notificationType={state.notificationType} animate={state.showNotification}/>}
       <section className="order-form-container">
         <div className="order-form">
           <div className="steps-header-container">
